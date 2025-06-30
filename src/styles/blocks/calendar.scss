@@ -23,29 +23,29 @@
 
     @for $day-number from 1 through 31 {
       &:nth-child(#{$day-number})::before {
-        content: "#{$day-number}";
+        content: '#{$day-number}';
       }
     }
 
     &:hover {
       cursor: pointer;
 
-      background-color: #FFBFCB;
+      background-color: #ffbfcb;
       transform: translateY(-20px);
     }
   }
 
   @each $day, $i in $days {
     &--start-day-#{$day} {
-      &:first-child {
-        margin-left: $i * ($cell-width + $cal-gap);
+      .calendar__day:first-child {
+        margin-left: ($i - 2) * ($cell-width + $cal-gap);
       }
     }
   }
 
   @for $i from 28 through 31 {
     &--month-length-#{$i} {
-      &__day:nth-child(n + #{$i + 1}) {
+      .calendar__day:nth-child(n + #{$i + 1}) {
         display: none;
       }
     }
