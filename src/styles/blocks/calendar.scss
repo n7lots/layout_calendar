@@ -38,7 +38,7 @@
   @each $day, $i in $days {
     &--start-day-#{$day} {
       .calendar__day:first-child {
-        margin-left: ($i - 2) * ($cell-width + $cal-gap);
+        margin-left: ($i - 1) * ($cell-width + $cal-gap);
       }
     }
   }
